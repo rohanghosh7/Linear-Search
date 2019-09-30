@@ -3,7 +3,7 @@
 
 int main()
 {
-  int array[100], search, c, n;
+  int array[100], search, c, n,flag=0;
 
   printf("Enter the number of elements in array\n");
   scanf("%d", &n); /* Taking input for no of elements in array*/
@@ -20,12 +20,18 @@ int main()
   {
     if (array[c] == search)    /* If element is found */
     {
+      flag++;
       printf("%d is found at location %d.\n", search, c+1);
       break;
     }
   }
-  if (c == n)
+ /* if (c == n)
+    printf("%d isn't found in the array.\n", search);*/
+  
+  if(flag==0)              //different approach when number wan't found
+  {
     printf("%d isn't found in the array.\n", search);
+  }
 
   return 0;
 }
